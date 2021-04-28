@@ -19,7 +19,7 @@ if(document.querySelectorAll(".top_positions").length > 0) {
 		};
 	});
 
-	Youth = function(age) {
+	function Youth(age) {
 		if(age < 18) {
 			let move = new XMLHttpRequest();
 			move.open("POST", "https://www.dugout-online.com/players/details/playerID/" + playersObj[i].id, true);
@@ -28,14 +28,14 @@ if(document.querySelectorAll(".top_positions").length > 0) {
 		}
 	}; // can only run on 1st squad page
 
-	First = function(age) {
+	 function First(age) {
 		let move = new XMLHttpRequest();
 		move.open("POST", "https://www.dugout-online.com/players/details/playerID/" + playersObj[i].id, true);
 		move.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 		move.send("moveto1st=1");
 	}; // can only run on youth page
 
-	moveTo = function(YOUTHor1ST) {
+	 function moveTo(YOUTHor1ST) {
 		for(i in playersObj) {
 			YOUTHor1ST(playersObj[i].age)
 		}
@@ -43,10 +43,12 @@ if(document.querySelectorAll(".top_positions").length > 0) {
 
 	if(document.querySelector("#first1") != null) {
 		newbutton = document.querySelector(".compare_players_wrapper tr").insertCell(4);
-		newbutton.outerHTML = '<td style="padding-left: 340px;"><input type="button" value="move to youth" onclick="moveTo(Youth);" ></td>'
+		newbutton.outerHTML = '<td style="padding-left: 340px;"><input type="button" value="move to youth"></td>'
+		newbutton.addEventListener ("click", moveTo(Youth), false)
 	} else {
 		newbutton = document.querySelector(".compare_players_wrapper tr").insertCell(4);
-		newbutton.outerHTML = '<td style="padding-left: 340px;"><input type="button" value="move to 1st" onclick="moveTo(First);" ></td>'
+		newbutton.outerHTML = '<td style="padding-left: 340px;"><input type="button" value="move to 1st"></td>'
+		newbutton.addEventListener ("click", moveTo(First), false)
 	};
 };
 
