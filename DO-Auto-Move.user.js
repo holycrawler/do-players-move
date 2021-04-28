@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name    DO-Auto-Move
-// @version 1.1
+// @version 1.2
 // @description auto move players (it works 60% of the time every time)
 // @author  mini18
 // @run-at  document-end
@@ -19,7 +19,7 @@ if(document.querySelectorAll(".top_positions").length > 0) {
 		};
 	});
 
-	function Youth(age) {
+	Youth = function(age) {
 		if(age < 18) {
 			let move = new XMLHttpRequest();
 			move.open("POST", "https://www.dugout-online.com/players/details/playerID/" + playersObj[i].id, true);
@@ -28,14 +28,14 @@ if(document.querySelectorAll(".top_positions").length > 0) {
 		}
 	}; // can only run on 1st squad page
 
-	function First(age) {
+	First = function(age) {
 		let move = new XMLHttpRequest();
 		move.open("POST", "https://www.dugout-online.com/players/details/playerID/" + playersObj[i].id, true);
 		move.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 		move.send("moveto1st=1");
 	}; // can only run on youth page
 
-	function moveTo(YOUTHor1ST) {
+	moveTo = function(YOUTHor1ST) {
 		for(i in playersObj) {
 			YOUTHor1ST(playersObj[i].age)
 		}
