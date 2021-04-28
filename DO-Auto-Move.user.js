@@ -5,7 +5,7 @@
 // @author  mini18
 // @run-at  document-start
 // @include *dugout-online.com/players/*
-// @update https://raw.githubusercontent.com/mini18do/do-players-move/main/do-move.userscript.js
+// @update https://github.com/mini18do/do-players-move/raw/main/DO-Auto-Move.user.js
 // ==/UserScript==
 
 if(document.querySelectorAll(".top_positions").length > 0) {
