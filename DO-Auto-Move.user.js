@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name    DO-Auto-Move
-// @version 1.0
+// @version 1.1
 // @description auto move players (it works 60% of the time every time)
 // @author  mini18
 // @run-at  document-end
