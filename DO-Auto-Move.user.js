@@ -3,7 +3,7 @@
 // @version 1.0
 // @description auto move players (it works 60% of the time every time)
 // @author  mini18
-// @run-at  document-start
+// @run-at  document-end
 // @include *dugout-online.com/players/*
 // @update https://github.com/mini18do/do-players-move/raw/main/DO-Auto-Move.user.js
 // ==/UserScript==
