@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name    DO-Auto-Move
-// @version 1.5
+// @version 1.6
 // @description auto move players (it works 60% of the time every time)
 // @author  mini18
 
@@ -44,13 +44,13 @@ if(document.querySelectorAll(".top_positions").length > 0) {
 
 	if(document.querySelector("#first1") != null) {
 		//newbutton.outerHTML = '<td style="padding-left: 340px;"><input type="button" value="move to youth"></td>'
-		newbutton.outerHTML = '<td style="padding-left: 340px;"><input type="button" onclick="movePlayers(toYouth);" value="move to youth"></td>'
+		newbutton.outerHTML = '<td style="position: absolute; padding-right: 25px; right: 0px;"><input type="button" onclick="movePlayers(toYouth);" value="move to youth"></td>'
 		//newbutton.addEventListener ("click",this.movePlayers(toYouth), false);
 		//newbutton.addEventListener ("click",movePlayers.bind(this,toYouth), false);
 		//newbutton.addEventListener ("click",function(){movePlayers(toYouth)}, false);
 	} else {
 		//newbutton.outerHTML = '<td style="padding-left: 340px;"><input type="button" value="move to 1st"></td>'
-		newbutton.outerHTML = '<td style="padding-left: 340px;"><input type="button" onclick="movePlayers(toFirst);" value="move to 1st"></td>'
+		newbutton.outerHTML = '<td style="position: absolute; padding-right: 25px; right: 0px;"><input type="button" onclick="movePlayers(toFirst);" value="move to 1st"></td>'
 		//newbutton.addEventListener ("click",this.movePlayers(toFirst), false);
 		//newbutton.addEventListener ("click",movePlayers.bind(this,toFirst), false);
 		//newbutton.addEventListener ("click",function(){movePlayers(toFirst)}, false);
