@@ -34,7 +34,7 @@ if(document.querySelectorAll(".top_positions").length > 0) {
 		move.send("moveto1st=1");
 	}; // can only run on youth page
 
-	moveP = function(YOUTHor1ST) {
+	movePlayers = function(YOUTHor1ST) {
 		for(i in playersObj) {
 			YOUTHor1ST(playersObj[i].age)
 		}
@@ -44,15 +44,15 @@ if(document.querySelectorAll(".top_positions").length > 0) {
 
 	if(document.querySelector("#first1") != null) {
 		//newbutton.outerHTML = '<td style="padding-left: 340px;"><input type="button" value="move to youth"></td>'
-		newbutton.outerHTML = '<td style="padding-left: 340px;"><input type="button" onclick="moveP(toYouth);" value="move to youth"></td>'
-		//newbutton.addEventListener ("click",this.moveP(toYouth), false);
-		//newbutton.addEventListener ("click",moveP.bind(this,toYouth), false);
-		//newbutton.addEventListener ("click",function(){moveP(toYouth)}, false);
+		newbutton.outerHTML = '<td style="padding-left: 340px;"><input type="button" onclick="movePlayers(toYouth);" value="move to youth"></td>'
+		//newbutton.addEventListener ("click",this.movePlayers(toYouth), false);
+		//newbutton.addEventListener ("click",movePlayers.bind(this,toYouth), false);
+		//newbutton.addEventListener ("click",function(){movePlayers(toYouth)}, false);
 	} else {
 		//newbutton.outerHTML = '<td style="padding-left: 340px;"><input type="button" value="move to 1st"></td>'
-		newbutton.outerHTML = '<td style="padding-left: 340px;"><input type="button" onclick="moveP(toFirst);" value="move to 1st"></td>'
-		//newbutton.addEventListener ("click",this.moveP(toFirst), false);
-		//newbutton.addEventListener ("click",moveP.bind(this,toFirst), false);
-		//newbutton.addEventListener ("click",function(){moveP(toFirst)}, false);
+		newbutton.outerHTML = '<td style="padding-left: 340px;"><input type="button" onclick="movePlayers(toFirst);" value="move to 1st"></td>'
+		//newbutton.addEventListener ("click",this.movePlayers(toFirst), false);
+		//newbutton.addEventListener ("click",movePlayers.bind(this,toFirst), false);
+		//newbutton.addEventListener ("click",function(){movePlayers(toFirst)}, false);
 	};
 };
