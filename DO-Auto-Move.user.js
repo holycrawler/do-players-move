@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name    DO-Auto-Move
-// @version 1.4
+// @version 1.5
 // @description auto move players (it works 60% of the time every time)
 // @author  mini18
 
@@ -19,7 +19,7 @@ if(document.querySelectorAll(".top_positions").length > 0) {
 	});
 
 	toYouth = function() {
-		if(playersObj[i].age < 18) {
+		if(playersObj[i].age < 19) {
 			let move = new XMLHttpRequest();
 			move.open("POST", "https://www.dugout-online.com/players/details/playerID/" + playersObj[i].id, true);
 			move.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
