@@ -16,7 +16,8 @@ if(document.querySelectorAll(".top_positions").length > 0) {
 			let id = e.children[2].children[1].id;
 			let age = parseInt(e.children[4].textContent);
 			if(age < 19) xmlHttp("POST", "https://www.dugout-online.com/players/details/playerID/" + id, true, postData, function() {
-				console.log("|", name, "|", age, "|")
+				e.remove();
+				//console.log("|", name, "|", age, "|");
 			});
 		});
 	};
