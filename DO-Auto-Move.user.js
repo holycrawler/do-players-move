@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name    DO-Auto-Move
-// @version 2.2
+// @version 2.3
 // @description auto move players (it works 60% of the time every time)
 // @author  mini18
 
