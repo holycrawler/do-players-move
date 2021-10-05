@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name    DO-Auto-Move
-// @version 4.0
+// @version 4
 // @description auto move players (it works 60% of the time every time)
 // @author  holycrawler
 // @include *dugout-online.com/players/*
