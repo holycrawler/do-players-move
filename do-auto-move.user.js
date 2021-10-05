@@ -10,10 +10,10 @@
 if (document.querySelector(".top_positions") != null) {
   let postData;
   function movePlayers() {
-    let table = document.querySelectorAll("tr[class*='matches_row']");
+    const table = document.querySelectorAll("tr[class*='matches_row']");
     table.forEach(function (e) {
-      let id = e.children[2].children[1].id;
-      let age = parseInt(e.children[4].textContent);
+      const id = e.cells[2].lastElementChild.id;
+      const age = parseInt(e.cells[4].textContent);
       if (age < 19) {
         fetch("https://www.dugout-online.com/players/details/playerID/" + id, {
           method: "POST",
@@ -25,10 +25,10 @@ if (document.querySelector(".top_positions") != null) {
     });
   }
 
-  let newcell = document
+  const newcell = document
     .querySelector(".compare_players_wrapper tr")
     .insertCell(4);
-  let newbutton = document.createElement("input");
+  const newbutton = document.createElement("input");
   newcell.style.position = "absolute";
   newcell.style.paddingRight = "25px";
   newcell.style.right = "0px";
