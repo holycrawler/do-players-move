@@ -20,7 +20,6 @@ if (document.querySelector(".top_positions") != null) {
           headers: { "Content-Type": "application/x-www-form-urlencoded" },
           body: postData,
         })
-          //.then((response) => console.log(response))
           .then(() => e.remove());
       }
     });
