@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name    DO-Auto-Move
-// @version 4.1
+// @version 4.2
 // @description auto move players (it works 60% of the time every time)
 // @author  holycrawler
 // @include *dugout-online.com/players/*
@@ -35,6 +35,6 @@
   newbutton.style.float = "right";
   newcell.append(newbutton);
   newbutton.addEventListener("click", movePlayers);
-  const isFirst = isSpreadSheet ? goalkeepers.youth.value === "0" : document.querySelector("#first1") != null;
+  const isFirst = isSpreadSheet ? view_mode.youth.value === "1" : document.querySelector("#first1") != null;
   [postData, newbutton.value] = isFirst ? ["movetoyouth=1", "move to youth"] : ["moveto1st=1", "move to 1st"];
 })();
