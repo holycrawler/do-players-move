@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name    DO-Auto-Move
-// @version 4
+// @version 4.1
 // @description auto move players (it works 60% of the time every time)
 // @author  holycrawler
 // @include *dugout-online.com/players/*
@@ -8,35 +8,34 @@
 // ==/UserScript==
 
 if (document.querySelector(".top_positions") != null) {
+  const isSpreadSheet = !document.querySelector("#spread2").className.match("tab_off");
+  const n = isSpreadSheet ? 1 : 0;
   let postData;
   function movePlayers() {
     const table = document.querySelectorAll("tr[class*='matches_row']");
-    table.forEach(function (e) {
-      const id = e.cells[2].lastElementChild.id;
-      const age = parseInt(e.cells[4].textContent);
+    table.forEach((e) => {
+      const url = e.querySelector("a").href;
+      const age = +e.cells[4 + n].textContent;
       if (age < 19) {
-        fetch("https://www.dugout-online.com/players/details/playerID/" + id, {
+        fetch(url, {
           method: "POST",
           headers: { "Content-Type": "application/x-www-form-urlencoded" },
           body: postData,
         })
+          .catch((err) => console.log(err))
           .then(() => e.remove());
       }
     });
   }
 
-  const newcell = document
-    .querySelector(".compare_players_wrapper tr")
-    .insertCell(4);
+  const newcell = document.querySelector(".compare_players_wrapper tr").insertCell();
   const newbutton = document.createElement("input");
-  newcell.style.position = "absolute";
-  newcell.style.paddingRight = "25px";
-  newcell.style.right = "0px";
+  if (!isSpreadSheet) newcell.style.width = "39%";
   newbutton.type = "button";
+  newbutton.style.float = "right";
   newcell.append(newbutton);
-  newbutton.addEventListener("click", movePlayers, true);
-  [postData, newbutton.value] =
-    document.querySelector("#first1") != null
-      ? ["movetoyouth=1", "move to youth"]
-      : ["moveto1st=1", "move to 1st"];
+  newbutton.addEventListener("click", movePlayers);
+
+  const isFirst = isSpreadSheet ? goalkeepers.youth.value === "0" : document.querySelector("#first1") != null;
+  [postData, newbutton.value] = isFirst ? ["movetoyouth=1", "move to youth"] : ["moveto1st=1", "move to 1st"];
 }
