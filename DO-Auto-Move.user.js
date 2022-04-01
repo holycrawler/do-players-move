@@ -1,10 +1,11 @@
 // ==UserScript==
 // @name    DO-Auto-Move
-// @version 4.2
+// @version 4.2.1
 // @description auto move players (it works 60% of the time every time)
 // @author  holycrawler
 // @include *dugout-online.com/players/*
-// @update https://github.com/holycrawler/do-players-move/raw/main/DO-Auto-Move.user.js
+// @updateURL https://github.com/holycrawler/do-players-move/raw/main/DO-Auto-Move.user.js
+// @downloadURL https://github.com/holycrawler/do-players-move/raw/main/DO-Auto-Move.user.js
 // ==/UserScript==
 
 (() => {
@@ -29,7 +30,7 @@
     });
   };
   const newcell = document.querySelector(".compare_players_wrapper tr").insertCell();
-  if (!isSpreadSheet) newcell.style.width = "39%";
+  if (!isSpreadSheet) newcell.style.width = "100%";
   const newbutton = document.createElement("input");
   newbutton.type = "button";
   newbutton.style.float = "right";
